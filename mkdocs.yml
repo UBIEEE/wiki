@@ -1,0 +1,115 @@
+# Project information
+site_name: UB IEEE Club Wiki
+site_url: https://ubieee.github.io/wiki
+site_description: >-
+  Documentation site for all of UB IEEE Club projects
+
+# Repository
+repo_name: ubieee/wiki
+repo_url: https://github.com/ubieee/wiki
+
+extra:
+  social:
+    - icon: fontawesome/brands/github 
+      link: https://github.com/ubieee
+
+# Configuration
+theme:
+  name: material
+  features:
+    - navigation.indexes
+    - navigation.footer
+    - content.tooltips
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/link
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: light blue
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: light blue
+      toggle:
+        icon: material/toggle-switch-off
+        name: Switch to system preference
+  font:
+    text: Roboto
+    code: JetBrains Mono
+  # logo: assets/ieee-white-logo.png
+
+markdown_extensions:
+  - attr_list
+  - md_in_html 
+  - abbr
+  - admonition
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.snippets:
+      auto_append:
+        - includes/abbreviations.md
+  - pymdownx.arithmatex:
+      generic: true
+
+watch:
+  - includes
+
+extra_css:
+  - stylesheets/extra.css
+  - https://unpkg.com/katex@0/dist/katex.min.css
+
+extra_javascript:
+  - javascripts/katex.js
+  - https://unpkg.com/katex@0/dist/katex.min.js
+  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+
+# Page tree - Update this when you add a new page
+nav:
+  - Home: index.md
+  - MicroMouse:
+    - micromouse/index.md
+    - Competition Rules: micromouse/competition-rules.md
+    - Getting Started: micromouse/getting-started.md
+    - Modules:
+      - micromouse/modules/index.md
+      - Battery & Power Distribution: micromouse/modules/battery-and-power-distribution.md
+      - Motors & Encoders: micromouse/modules/motors-and-encoders.md
+      - Drivetrain: micromouse/modules/drivetrain.md
+      - Wall Sensors: micromouse/modules/wall-sensors.md
+      - Microcontroller: micromouse/modules/microcontroller.md
+      - Buttons & Switches: micromouse/modules/buttons-and-switches.md
+      - LEDs & Buzzers: micromouse/modules/leds-and-buzzers.md
+      - IMU: micromouse/modules/imu.md
+    - Electrical:
+      - micromouse/electrical/index.md
+      - Wiring: micromouse/electrical/wiring.md
+      - PCB Design: micromouse/electrical/pcb-design.md
+    - Mechanical:
+      - micromouse/mechanical/index.md
+      - 3D Printing: micromouse/mechanical/3d-printing.md
+    - Software:
+      - micromouse/software/index.md
+      - Programming Language: micromouse/software/programming-language.md
+      - Code Structure & Organization: micromouse/software/code-organization.md
+      - Maze Solving Algorithms: micromouse/software/maze-solving-algorithms.md
+      - Robot Control & Navigation: micromouse/software/robot-control-and-navigation.md
+      - Offline Simulation: micromouse/software/offline-simulation.md
+      - Unit Testing: micromouse/software/unit-testing.md
+  - BattleBots:
+    - battlebots/index.md
+  - Arcade Machine:
+    - arcade-machine/index.md
+  - Workshops:
+    - workshops/index.md
+    - Git & Git Workshop: workshops/git-github.md
+  - Editing the Wiki: editing-the-wiki.md
+

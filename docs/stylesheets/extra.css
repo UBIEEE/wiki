@@ -1,0 +1,5 @@
+:root  > * {
+  --md-primary-fg-color: #00629B; /* IEEE Blue */
+  --md-primary-fg-color--light: #809DBD; /* Lighter */
+  --md-primary-fg-color--dark:  #005282; /* Darker */
+}
