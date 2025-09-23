@@ -111,5 +111,6 @@ nav:
   - Workshops:
     - workshops/index.md
     - Git & Git Workshop: workshops/git-github.md
+    - Arduino Uno R4 Matrix Display Workshop: workshops/arduino-uno-r4-matrix-display.md
   - Editing the Wiki: editing-the-wiki.md
 
