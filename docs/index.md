@@ -4,13 +4,11 @@ This site contains information about all of the projects run by the University a
 
 Any member of the UB IEEE Club can edit this wiki. If you would like to contribute, see [Editing the Wiki](editing-the-wiki.md).
 
-## Projects
-
 <div class="grid cards" markdown>
 
 - [:fontawesome-solid-mouse: __MicroMouse__](micromouse/index.md)
 - [:fontawesome-solid-robot: __Battle Bots__](battlebots/index.md)
 - [:fontawesome-solid-gamepad: __Arcade Machine__](arcade-machine/index.md)
 - [:fontawesome-solid-tools: __Workshops__](workshops/index.md)
-- [:fontawesome-solid-tools: __Common Resources__](common-resources/index.md)
+- [:fontawesome-solid-cog: __Common Resources__](common-resources/index.md)
 </div>

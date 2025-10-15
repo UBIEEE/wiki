@@ -1,3 +1,9 @@
+---
+title: Machine Shop
+---
+
+# Machine Shop
+
 The SEAS Machine Shop requires that all users complete a safety training before being able to use the facility. You can visit [this link](https://engineering.buffalo.edu/home/school/explore/facilities/machine-shop/safety-procedures.html) to take the course and become machine shop certified. This course consists of a video lecture followed by a quiz. You must get 100% on the quiz, but you can retake it. This generally should take between one and two hours. 
 
 You can find more general information about the SEAS Machine Shop [here](https://engineering.buffalo.edu/home/school/explore/facilities/machine-shop.html).
