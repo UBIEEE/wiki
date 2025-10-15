@@ -115,6 +115,7 @@ nav:
   - Common Resources: 
     - common-resources/index.md
     - Machine Shop: common-resources/machine-shop.md
+    - Git Version Control: common-resources/git-resources.md
   - Editing the Wiki: editing-the-wiki.md
 
 
