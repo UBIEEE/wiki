@@ -1,0 +1,2045 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation site for all of UB IEEE Club projects">
+      
+      
+      
+        <link rel="canonical" href="https://ubieee.github.io/wiki/micromouse/modules/motors-and-encoders/">
+      
+      
+        <link rel="prev" href="../battery-and-power-distribution/">
+      
+      
+        <link rel="next" href="../drivetrain/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+    
+    
+      
+        <title>MicroMouse Motors and Encoders Module - UB IEEE Club Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#motors-and-encoders" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="UB IEEE Club Wiki" class="md-header__button md-logo" aria-label="UB IEEE Club Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            UB IEEE Club Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              MicroMouse Motors and Encoders Module
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 5-5 5 5 0 0 0-5-5"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="light-blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="light-blue"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5M7 15a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ubieee/wiki" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ubieee/wiki
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="UB IEEE Club Wiki" class="md-nav__button md-logo" aria-label="UB IEEE Club Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    UB IEEE Club Wiki
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ubieee/wiki" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ubieee/wiki
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    MicroMouse
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            MicroMouse
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../competition-rules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Competition Rules
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Modules
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Modules
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../battery-and-power-distribution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Battery & Power Distribution
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Motors & Encoders
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Motors & Encoders
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#selecting-a-motor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Selecting a Motor
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Selecting a Motor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#motor-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      Motor Type
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#motor-voltage-current-draw" class="md-nav__link">
+    <span class="md-ellipsis">
+      Motor Voltage + Current Draw
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rpm-torque" class="md-nav__link">
+    <span class="md-ellipsis">
+      RPM + Torque
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encoders" class="md-nav__link">
+    <span class="md-ellipsis">
+      Encoders
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Encoders">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#optical-encoders" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optical Encoders
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hall-effect-encoders" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hall Effect Encoders
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#encoder-precision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Encoder Precision
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-quadratureincremental-encoders" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using Quadrature/Incremental Encoders
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#good-micromouse-motors-and-encoders" class="md-nav__link">
+    <span class="md-ellipsis">
+      Good MicroMouse Motors and Encoders
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Good MicroMouse Motors and Encoders">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gearmotor-w-extended-back-shaft-and-hall-effect-encoder" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gearmotor w/ Extended Back Shaft and Hall Effect Encoder
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#faulhaber-1717sr-series-motor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Faulhaber 1717SR Series Motor
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controlling-brushed-dc-motors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Controlling Brushed DC Motors
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../drivetrain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Drivetrain
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wall-sensors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Wall Sensors
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../microcontroller/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Microcontroller
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../buttons-and-switches/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Buttons & Switches
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../leds-and-buzzers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    LEDs & Buzzers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../imu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IMU
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../electrical/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Electrical
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Electrical
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../electrical/wiring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Wiring
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../electrical/pcb-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PCB Design
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../mechanical/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Mechanical
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Mechanical
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mechanical/3d-printing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3D Printing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../software/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Software
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            Software
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/programming-language/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programming Language
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/code-organization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Code Structure & Organization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/maze-solving-algorithms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Maze Solving Algorithms
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/robot-control-and-navigation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Robot Control & Navigation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/offline-simulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Offline Simulation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/unit-testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Unit Testing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../battlebots/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    BattleBots
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            BattleBots
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../arcade-machine/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Arcade Machine
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Arcade Machine
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../workshops/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Workshops
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Workshops
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../workshops/git-github/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Git & Git Workshop
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../workshops/arduino-uno-r4-matrix-display/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Arduino Uno R4 Matrix Display Workshop
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../common-resources/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Common Resources
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Common Resources
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../common-resources/machine-shop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Machine Shop
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../common-resources/git-resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Git Version Control
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editing-the-wiki/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Editing the Wiki
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#selecting-a-motor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Selecting a Motor
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Selecting a Motor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#motor-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      Motor Type
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#motor-voltage-current-draw" class="md-nav__link">
+    <span class="md-ellipsis">
+      Motor Voltage + Current Draw
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rpm-torque" class="md-nav__link">
+    <span class="md-ellipsis">
+      RPM + Torque
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encoders" class="md-nav__link">
+    <span class="md-ellipsis">
+      Encoders
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Encoders">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#optical-encoders" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optical Encoders
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hall-effect-encoders" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hall Effect Encoders
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#encoder-precision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Encoder Precision
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-quadratureincremental-encoders" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using Quadrature/Incremental Encoders
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#good-micromouse-motors-and-encoders" class="md-nav__link">
+    <span class="md-ellipsis">
+      Good MicroMouse Motors and Encoders
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Good MicroMouse Motors and Encoders">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gearmotor-w-extended-back-shaft-and-hall-effect-encoder" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gearmotor w/ Extended Back Shaft and Hall Effect Encoder
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#faulhaber-1717sr-series-motor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Faulhaber 1717SR Series Motor
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controlling-brushed-dc-motors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Controlling Brushed DC Motors
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="motors-and-encoders">Motors and Encoders</h1>
+<h2 id="selecting-a-motor">Selecting a Motor</h2>
+<p>There are several factors to consider when selecting a motor:</p>
+<ol>
+<li>Motor Type</li>
+<li>Voltage + Current Draw</li>
+<li><abbr title="Revolutions Per Minute">RPM</abbr> + Torque</li>
+<li>Encoder Compatibility</li>
+</ol>
+<h3 id="motor-type">Motor Type</h3>
+<p>There are two main types of <abbr title="Direct Current">DC</abbr> motors: brushed and brushless.
+Without going into the specifics of how they work, here's a brief description of both kinds:</p>
+<ol>
+<li>
+<p>Brushed Motors</p>
+<ul>
+<li>Cheap and easy to find</li>
+<li>Easily controlled by varying the voltage supplied to them. An H-bridge can be used for this</li>
+<li>Do not include any sensors to determine their position or speed — an external sensor (like an encoder) is required</li>
+</ul>
+</li>
+<li>
+<p>Brushless Motors (<abbr title="Brushless Direct Current">BLDC</abbr>)</p>
+<ul>
+<li>Expensive</li>
+<li>Require a specialized controller (<abbr title="Electronic Speed Controller">ESC</abbr>) to control them</li>
+<li>Typically include an internal encoder that can be used to determine their position and speed</li>
+</ul>
+</li>
+</ol>
+<p>For MicroMouse, we recommend using brushed <abbr title="Direct Current">DC</abbr> motors — you really do not need the extra complexity of brushless motors. For the most part, this wiki will focus on brushed <abbr title="Direct Current">DC</abbr> motors. If you choose to use a <abbr title="Brushless Direct Current">BLDC</abbr> motor, I assume you know what you are doing.</p>
+<h3 id="motor-voltage-current-draw">Motor Voltage + Current Draw</h3>
+<p>You should have already figured out which battery you are using and how your motors will be powered (see <a href="../battery-and-power-distribution/">Battery &amp; Power Distribution</a>).  </p>
+<p>The voltage listed in the description of a motor is typically its max voltage. For normal brushed <abbr title="Direct Current">DC</abbr> motors, it is fine to run them slightly below their listed voltages (they will just be slower). 
+If you are using a <abbr title="Brushless Direct Current">BLDC</abbr>, be careful with how you power it because they usually have strict requirements. Make sure that you follow its instructions well. </p>
+<p>Another essential consideration is the current draw of your motors. In the datasheet for your motor, look for a value named "stall current". This is the maximum current that the motor will draw (when it is stalled, producing its maximum torque). Make sure your robot's power distribution system can handle this (while powering other components too!). If you are very limited and cannot always guarantee that your power distribution system can supply enough current, consider adding a fuse to protect your motors and other components from damage in case of a stall.</p>
+<h3 id="rpm-torque"><abbr title="Revolutions Per Minute">RPM</abbr> + Torque</h3>
+<p>To determine the <abbr title="Revolutions Per Minute">RPM</abbr> you need from your motors, first determine the maximum speed you want your MicroMouse to travel at. For most robots, 1 m/s is a good upper limit. Some advanced MicroMouse robots may go upwards of 3 m/s.</p>
+<p>Next, determine the wheel diameter you will be using.</p>
+<p>With these values, you can calculate the <abbr title="Revolutions Per Minute">RPM</abbr> you need from your motors using the following formula:</p>
+<div class="arithmatex">\[
+\text{RPM} = 60 \times \frac{\text{velocity}}{\pi \times \text{wheel diameter}}
+\]</div>
+<p>If you are planning to gear down your motors, make sure to account for that as well.</p>
+<p>Note that the <abbr title="Revolutions Per Minute">RPM</abbr> listed in a motor's description is usually its maximum free-spinning <abbr title="Revolutions Per Minute">RPM</abbr>. When under load (moving your robot), its <abbr title="Revolutions Per Minute">RPM</abbr> will be lower. When selecting a motor, choose one that is rated for a higher <abbr title="Revolutions Per Minute">RPM</abbr> than you need, maybe 20-30% higher.</p>
+<details class="example" open="open">
+<summary>Example</summary>
+<p>$ \text{wheel diameter} = 5 \text{ cm}$</p>
+<p>$ \text{maximum velocity} = 100 \text{ cm} /\text{s}$</p>
+<p>$ \text{motor speed} = 60 \times \frac{100}{\pi \times 5} = 382 $ <abbr title="Revolutions Per Minute">RPM</abbr></p>
+<p>In this case, you will need a motor that can provide at least 382 <abbr title="Revolutions Per Minute">RPM</abbr> under load. Using a motor with a free-spinning speed of 500-600 <abbr title="Revolutions Per Minute">RPM</abbr> might be a good choice.</p>
+</details>
+<h2 id="encoders">Encoders</h2>
+<p>Encoders are essential for precise control of your robot. In certain cases, they can be omitted in lieu of a super accurate <abbr title="Inertial Measurement Unit">IMU</abbr> or an amazing vision system, but chances are you do not want to go down that road.</p>
+<p>Encoders provide information about the velocity of your motors and distance traveled. Without them, it is very difficult to control your robot's speed and position accurately.</p>
+<p>There are two main types of encoders: optical and hall effect.</p>
+<h3 id="optical-encoders">Optical Encoders</h3>
+<p><img align="right" alt="Optical Encoder Image" src="../../../assets/micromouse/optical-encoder.png" width="200" /></p>
+<p>Optical encoders work by spinning a disk with slits in it, then shining a light through the disk and checking whether the light passes through or not. As it rotates, your <abbr title="Microcontroller Unit">MCU</abbr> can count pulses from the encoder to determine how far the motor has turned. See <a href="#using-quadratureincremental-encoders">Using Quadrature/Incremental Encoders</a>.</p>
+<h3 id="hall-effect-encoders">Hall Effect Encoders</h3>
+<p><img align="right" alt="Hall Effect Encoder Image" src="../../../assets/micromouse/hall-effect-encoder.png" width="200" /></p>
+<p>Hall effect encoders work by spinning a magnet with radially alternating poles past a hall effect sensor.  The sensor detects the change in magnetic field as the magnet passes by and sends a pulse to your <abbr title="Microcontroller Unit">MCU</abbr>. As with optical encoders, you can count these pulses to determine how far the motor has turned. See <a href="#using-quadratureincremental-encoders">Using Quadrature/Incremental Encoders</a>.</p>
+<p>Hall effect encoders are usually smaller than optical encoders, making them a good choice for MicroMouse robots. They are also generally more reliable. However, the precision of hall effect encoders is limited by the number of radial poles on the magnet.</p>
+<h3 id="encoder-precision">Encoder Precision</h3>
+<p>Typically, the greatest number of radial poles that you can find on a magnet small enough for MicroMouse is 6. Optical encoder disks may have double that number of slits.
+A good way to gauge encoder precision is by calculating the distance that the robot travels per encoder pulse.</p>
+<div class="arithmatex">\[
+\text{distance per pulse} = \frac{1}{\text{pulses per revolution}} \times \text{wheel diameter} \times \pi
+\]</div>
+<details class="example">
+<summary>Example</summary>
+<p>$ \text{encoder pulses per revolution} = 6$</p>
+<p>$ \text{wheel diameter} = 5 \text{ cm}$</p>
+<p>$ \text{distance per pulse} = \frac{1}{6} \times 5 \times \pi = 2.62 \text{ cm}$</p>
+</details>
+<p>Remember that MicroMouse robots are very small — the size of a maze cell is only 18 cm. Using an encoder attached directly to your robot's wheels with only 6 pulses per revolution will not provide enough precision for most robots, especially if the robot is using large wheels. To improve the precision, consider gearing your drivetrain in such a way that your robot's wheels rotate slower than your encoders. These <a href="#gearmotor-w-extended-back-shaft-and-hall-effect-encoder">gearmotors</a> described later make this easy.</p>
+<details class="example">
+<summary>Revised Example with Gear Ratio</summary>
+<p>$ \text{wheel diameter} = 5 \text{ cm}$</p>
+<p>$ \text{gear ratio} = 40:1$</p>
+<p>$ \text{encoder pulses per revolution} = 6 \times 40 = 240$</p>
+<p>$ \text{distance per pulse} = \frac{1}{240} \times 5 \times \pi = 0.07 \text{ cm}$</p>
+<p>Compared to the previous example, this drivetrain is considerably more precise with a distance per pulse less than 1 mm. Excellent.</p>
+<p><img alt="Mr. Burns gif" src="../../../assets/micromouse/mr-burns-excellent.gif" width="100" /></p>
+</details>
+<h3 id="using-quadratureincremental-encoders">Using Quadrature/Incremental Encoders</h3>
+<p>Most encoders are "quadrature" or "incremental" encoders which have two output channels (A and B).
+If your encoder instead uses an <abbr title="Inter-Integrated Circuit">I2C</abbr> or <abbr title="Serial Peripheral Interface">SPI</abbr> interface, refer to the manufacturer's documentation for how to use it.</p>
+<p>For hall effect encoders, channels A and B typically correspond to two hall sensors placed 90 degrees out of phase with each other. These signals will tell you whether the sensor is seeing a north or south pole of the magnet. As the magnet spins, your <abbr title="Microcontroller Unit">MCU</abbr> can count the pulses of these signals to determine how far the motor has turned. To determine the direction of rotation, check which channel is leading the other, like so:</p>
+<p><img alt="Encoder Rotation Diagram" src="../../../assets/micromouse/hall-effect-encoder-rotation-diagram-light-bg.png#only-light" />
+<img alt="Encoder Rotation Diagram" src="../../../assets/micromouse/hall-effect-encoder-rotation-diagram-dark-bg.png#only-dark" /></p>
+<p>On your <abbr title="Microcontroller Unit">MCU</abbr>, you can use external interrupts to trigger when the channels change state. However, your encoders will likely be spinning very fast — potentially faster than your <abbr title="Microcontroller Unit">MCU</abbr> can keep up with. Instead, (if your <abbr title="Microcontroller Unit">MCU</abbr> supports it) consider using hardware timers to count the encoder pulses for you. Then your code just need to read the timer value whenever it needs encoder information. STM32s are awesome at this.</p>
+<h2 id="good-micromouse-motors-and-encoders">Good MicroMouse Motors and Encoders</h2>
+<h3 id="gearmotor-w-extended-back-shaft-and-hall-effect-encoder">Gearmotor w/ Extended Back Shaft and Hall Effect Encoder</h3>
+<p>Many MicroMouse robots use this geared brushed <abbr title="Direct Current">DC</abbr> motor + Hall Effect encoder combo:</p>
+<p><img align="right" alt="Gearmotor with Encoder Image" src="../../../assets/micromouse/gearmotor-with-encoder.png" width="200" /></p>
+<p>These motors have a few benefits:</p>
+<ol>
+<li>Small size</li>
+<li>Cheap</li>
+<li>Available with a variety of gear ratios — good for fast or slow robots</li>
+<li>D Shaft, easy to attach wheels</li>
+<li>Easy encoder integration (before gearing, so high precision)</li>
+<li>Relatively easy to mount (you must 3D print a part to clamp the geared area)</li>
+<li>Available in many different voltages (3.3V, 6V, 12V)</li>
+</ol>
+<p>If you choose this route, you <em>might</em> be able to buy the motor with an encoder pre-attached, but most likely you will need to buy them separately and solder them together yourself.</p>
+<p>For the motor, make sure you buy one with an "extended back shaft" — this is essential for mounting the encoder. 50:1 is a good gear ratio for most MicroMouse robots. If you have a need for speed, consider 30:1 or 20:1.</p>
+<p>For the encoder, you can find "regular" ones which stick out the flat side of the motor (see the image above), or "sideways" ones that go the other way. Choose whichever one better fits your robot.</p>
+<p>Some encoders come with JST connectors. These connectors can be handy; however, they are not meant for frequent plugging and unplugging because the pins bend very easily. If you want to aviod this headache, buy ones that you can solder wires to yourself.</p>
+<p>Links: </p>
+<ul>
+<li>Digikey: <a href="https://www.digikey.com/en/products/detail/pololu/3073/10450075">50:1 Motor</a>, <a href="https://www.digikey.com/en/products/detail/pololu/3081/10450612">Regular Encoder (2-pack)</a> </li>
+<li>Pimoroni: <a href="https://shop.pimoroni.com/products/micro-metal-gearmotor-extended-back-shaft?variant=3073681025">Motor</a>, <a href="https://shop.pimoroni.com/products/micro-metal-motor-encoder?variant=39888423321683">Regular Encoder (2-pack)</a>, <a href="https://shop.pimoroni.com/products/micro-metal-motor-encoder?variant=39888423354451">Sideways Encoder (2-pack)</a> </li>
+</ul>
+<h3 id="faulhaber-1717sr-series-motor">Faulhaber 1717SR Series Motor</h3>
+<p>Many top MicroMouse robots use these Faulhaber 1717SR series motors (1717T003SR for 3V or 1717T006SR for 6V) combined with an IE2-512 encoder. These motors and encoders are very small and considerably powerful; however, they are quite expensive ($200+ each).  </p>
+<p>Links: </p>
+<ul>
+<li><a href="https://www.faulhaber.com/en/products/series/1717sr/#37005">1717T003SR</a> </li>
+<li><a href="https://www.faulhaber.com/en/products/series/ie2-1024/#2851">IE2-512</a></li>
+</ul>
+<h2 id="controlling-brushed-dc-motors">Controlling Brushed <abbr title="Direct Current">DC</abbr> Motors</h2>
+<p>To adjust the speed of a brushed <abbr title="Direct Current">DC</abbr> motor, you must adjust the voltage supplied to it (e.g. for a 5 V motor, 5 V is full speed, 0 V is stopped, and 2.5 V is half speed). To change a motor's direction, flip its polarity.</p>
+<p><img align="right" alt="PWM Duty Cycle Diagram" src="../../../assets/micromouse/pwm-duty-cycle-diagram-light-bg.png#only-light" width="300" />
+<img align="right" alt="PWM Duty Cycle Diagram" src="../../../assets/micromouse/pwm-duty-cycle-diagram-dark-bg.png#only-dark" width="300" /></p>
+<p>Normally it is difficult to produce a variable voltage to control motors, so most applications use <abbr title="Pulse Width Modulation">PWM</abbr> (Pulse Width Modulation) to simulate a lower voltage by switching from high voltage to low voltage at a high frequency. Depending on the duty cycle of the <abbr title="Pulse Width Modulation">PWM</abbr> signal (percent time high during one cycle), the resulting average voltage will change.</p>
+<p>Almost all modern <abbr title="Microcontroller Units">MCUs</abbr> (Arduino, STM32, etc.) can output a <abbr title="Pulse Width Modulation">PWM</abbr> signal from at least a few of its pins. However, these pins cannot supply enough current to directly power a motor. H-Bridge motor controllers solve this problem by providing an easy way to use an alternate power source to power motors.  </p>
+<p>H-Bridge motor controllers typically come in one of two (sometimes both – you choose) control methods: IN/IN or PHASE/ENABLE (I’m using TI’s terminology here, might be described differently in other places). For IN/IN, the H-Bridge has two <abbr title="Pulse Width Modulation">PWM</abbr> inputs, one for forward speed and the other for reverse speed. PHASE/ENABLE on the other hand has two inputs: PHASE controls the direction of the output, and ENABLE controls whether it is on/off, which you can control using <abbr title="Pulse Width Modulation">PWM</abbr> to adjust the speed of the motor.</p>
+<p>MicroMouse robots typically have two motors, so instead of getting two H-Bridge components for your robot, look for a single "Dual H-Bridge" component that integrates two H-Bridges into one small package. </p>
+<details class="question">
+<summary>Joke: Why was the <abbr title="Pulse Width Modulation">PWM</abbr> wire always calm and collected?</summary>
+<p>Because it knew how to keep its pulse under control!</p>
+</details>
+<!-- Add abbreviations here. Make sure to include plurals -->
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../battery-and-power-distribution/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Battery &amp; Power Distribution">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Battery & Power Distribution
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../drivetrain/" class="md-footer__link md-footer__link--next" aria-label="Next: Drivetrain">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Drivetrain
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/ubieee" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.indexes", "navigation.footer", "content.tooltips"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="../../../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>
