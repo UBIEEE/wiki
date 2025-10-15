@@ -12,6 +12,5 @@ Any member of the UB IEEE Club can edit this wiki. If you would like to contribu
 - [:fontawesome-solid-robot: __Battle Bots__](battlebots/index.md)
 - [:fontawesome-solid-gamepad: __Arcade Machine__](arcade-machine/index.md)
 - [:fontawesome-solid-tools: __Workshops__](workshops/index.md)
-
+- [:fontawesome-solid-tools: __Common Resources__](common-resources/index.md)
 </div>
-
