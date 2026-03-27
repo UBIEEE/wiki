@@ -51,3 +51,8 @@ If you plan for your MicroMouse to drive diagonally between cells, it will need 
 
 The cells are 5 cm tall, but there is no height limit for your robot.
 
+## Bonus Resources
+
+Extra resources that might assist you.
+
+- [UCLA MicroMouse Lectures](https://youtube.com/playlist?list=PLAWsHzw_h0iiPIaGyXAr44G0XfHfyjOe7&si=TqWa_xPn7eOs0glw) - Great overviews on different areas of the project.

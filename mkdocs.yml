@@ -116,6 +116,7 @@ nav:
     - common-resources/index.md
     - Machine Shop: common-resources/machine-shop.md
     - Git Version Control: common-resources/git-resources.md
+    - Programming Best Practices: common-resources/programming-practices.md
   - Editing the Wiki: editing-the-wiki.md
 
 
