@@ -6,7 +6,7 @@ title: MicroMouse Robot Control & Navigation Software
 
 Maze navigation is probably the most complicated part of the MicroMouse program since it takes a lot of testing and fine-tuning.  
 
-"Navigation" refers to the process of taking readings from sensors (wall sensors, motor encoders, IMU, etc.), then determining where the MicroMouse is in the maze and how to move. This process can be deceptively hard – just driving in a straight line for more than a few inches can be a considerabe challenge. 
+"Navigation" refers to the process of taking readings from sensors (wall sensors, motor encoders, IMU, etc.), then determining where the MicroMouse is in the maze and how to move. This process can be deceptively hard – just driving in a straight line for more than a few inches can be a considerable challenge. 
 
 ## PID Control
 
